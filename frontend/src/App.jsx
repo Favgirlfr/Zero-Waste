@@ -24,6 +24,9 @@ import DonorImpact from "./pages/DonorImpact";
 import RecipientRequests from "./pages/RecipientRequests";
 import RecipientImpact from "./pages/RecipientImpact";
 import About from "./pages/About";
+import RecipientNewRequest from "./pages/RecipientNewRequest";
+
+
 
 function App() {
   const [notifications, setNotifications] = useState([]);
@@ -191,7 +194,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/unauthorized" element={<Unauthorized />} />
-
+        <Route path="/recipient-requests/new" element={<RecipientNewRequest />} />
+        <Route path="/about" element={<About />} /> 
 <Route
   path="/donor-dashboard"
   element={

@@ -3,6 +3,7 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import PickupForm from '../components/PickupForm';
+import  socket  from '../socket'; 
 
 const DonorDashboard = () => {
   const [myFoodItems, setMyFoodItems] = useState([]);
@@ -33,6 +34,17 @@ const DonorDashboard = () => {
       });
   }, [navigate]);
 
+  // ✅ Real-time listener for new recipient requests
+  useEffect(() => {
+    socket.on("new-request", (data) => {
+      toast.info(`📦 New request: ${data.item} (${data.quantity})`);
+    });
+
+    return () => {
+      socket.off("new-request");
+    };
+  }, []);
+
   return (
     <div className="p-6">
       <h2 className="text-2xl font-bold text-green-700 mb-2">🌱 Welcome, Donor!</h2>
@@ -54,11 +66,11 @@ const DonorDashboard = () => {
           📊 View Your Impact
         </button>
         <button
-  onClick={() => navigate("/donor-overview")}
-  className="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700"
->
-  🧾 View Overview
-</button>
+          onClick={() => navigate("/donor-overview")}
+          className="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700"
+        >
+          🧾 View Overview
+        </button>
       </div>
 
       {loading ? (

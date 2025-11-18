@@ -6,7 +6,6 @@ const dotenv = require('dotenv');
 const connectDB = require('./config/db');
 const foodRoutes = require('./routes/food');
 
-
 dotenv.config();
 connectDB();
 
@@ -27,7 +26,13 @@ const userRoutes = require('./routes/userRoutes');
 app.use('/api/users', userRoutes);
 const donationsRoutes = require('./routes/donations');
 app.use('/api/donations', donationsRoutes);
+const recipientRoutes = require("./routes/recipient");
+app.use("/api/recipient", recipientRoutes);
 
+app.use((req, res, next) => {
+  req.io = io;
+  next();
+});
 // Placeholder route
 app.get('/', (req, res) => {
   res.send('Zero Waste API is running...');

@@ -8,7 +8,8 @@ const userSchema = new mongoose.Schema(
     role: { type: String, enum: ['donor', 'recipient', 'admin'], default: 'donor' },
     phone: String,
     organization: String,
-    isVerified: { type: Boolean, default: false },
+    isVerified: { type: Boolean, default: false }, //  verification status
+    verificationToken: { type: String },           //  token for email verification
   },
   { timestamps: true }
 );
