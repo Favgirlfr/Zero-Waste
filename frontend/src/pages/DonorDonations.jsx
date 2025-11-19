@@ -16,7 +16,7 @@ export default function DonorDonations() {
 
   const fetchDonations = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/donations/mine", {
+      const res = await axios.get("${import.meta.env.VITE_API_URL}/donations/mine", {
         headers: { Authorization: `Bearer ${token}` },
       });
       // Ensure the response is an array before setting state to avoid runtime errors

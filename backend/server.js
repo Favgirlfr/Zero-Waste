@@ -47,7 +47,8 @@ app.use((err, req, res, next) => {
 const server = http.createServer(app);
 const io = socketIo(server, {
   cors: {
-    origin: 'http://localhost:3000',
+    origin: ['http://localhost:3000',
+              'https://zero-waste-blond.vercel.app'],
     methods: ['GET', 'POST', 'PATCH']
   }
 });

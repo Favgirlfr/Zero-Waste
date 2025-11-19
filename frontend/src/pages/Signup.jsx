@@ -11,7 +11,7 @@ function Signup() {
     e.preventDefault();
     try {
       // Step 1: Register the user
-      const registerRes = await fetch("http://localhost:5000/api/auth/register", {
+      const registerRes = await fetch("${import.meta.env.VITE_API_URL}/auth/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, password, role }),
@@ -30,7 +30,7 @@ function Signup() {
       }
 
       // Step 2: Auto-login after successful signup
-      const loginRes = await fetch("http://localhost:5000/api/auth/login", {
+      const loginRes = await fetch("${import.meta.env.VITE_API_URL}/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),

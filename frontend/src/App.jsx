@@ -51,7 +51,7 @@ function App() {
 
   const fetchNotifications = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/users/notifications", {
+      const res = await fetch("${import.meta.env.VITE_API_URL}/users/notifications", {
         headers: { Authorization: `Bearer ${token}` },
       });
 
