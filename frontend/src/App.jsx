@@ -76,7 +76,7 @@ function App() {
 
   const handleMarkAsRead = async (id) => {
     try {
-      await fetch(`http://localhost:5000/api/users/notifications/${id}/read`, {
+      await fetch(`${import.meta.env.VITE_API_URL}/users/notifications/${id}/read`, {
         method: "PATCH",
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -97,7 +97,7 @@ function App() {
     try {
       await Promise.all(
         unread.map((n) =>
-          fetch(`http://localhost:5000/api/users/notifications/${n._id}/read`, {
+          fetch(`${import.meta.env.VITE_API_URL}/users/notifications/${n._id}/read`, {
             method: "PATCH",
             headers: { Authorization: `Bearer ${token}` },
           })
