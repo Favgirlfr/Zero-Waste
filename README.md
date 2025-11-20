@@ -6,8 +6,8 @@
 
 ## 🚀 Live Demo
 
-- **Frontend:** [https://your-frontend.vercel.app]
-- **Backend:** [https://your-backend.onrender.com]
+- **Frontend:** https://zero-waste-blond.vercel.app/
+- **Backend:** https://zerowaste-se46.onrender.com
 
 ---
 
