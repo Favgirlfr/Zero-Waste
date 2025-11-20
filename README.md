@@ -33,7 +33,7 @@
 - View and manage donation history
 - Receive pickup confirmations
 
-### ✅ Admin Flow (optional)
+### ✅ Admin Flow 
 - Verify donations and requests
 - Track platform impact
 
@@ -66,21 +66,6 @@ Zero-Waste/
 │   └── server.js
 │
 └── README.md
-
-
----
-
-## ⚙️ Environment Variables
-
-### Backend (`backend/.env`)
-MONGO_URI=your_mongodb_atlas_uri JWT_SECRET=your_jwt_secret EMAIL_USER=your_email_address EMAIL_PASS=your_email_password
-
-
-### Frontend (`frontend/.env`)
-REACT_APP_API_BASE_URL=https://your-backend.onrender.com
-
-
----
 
 ## 🛠 Setup Instructions
 
